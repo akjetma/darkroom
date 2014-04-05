@@ -4,8 +4,6 @@ module Darkroom
     Root.resource = RestClient::Resource.new Root.url, :headers => { :authorization => "Client-ID #{client_id}" }
   end
 
-  private
-
   def self.build
     [Image, Album, Comment].each do |klass|
       klass.instance_eval do
