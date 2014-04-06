@@ -1,9 +1,17 @@
 module Darkroom
   class Comment
+
     @resources = {
 
-      :info    => lambda { |args| ['comment', args[0]] },
-      :replies => lambda { |args| ['comment', args[0], 'replies'] }
+      :info => {
+        :pattern => lambda { |args| "comment/#{args[0]}" },
+        :create  => lambda { |data| Comment.new(data) }
+      },
+
+      :replies => {
+        :pattern => lambda { |args| "comment/#{args[0]}/replies" },
+        :create  => lambda { |data| data.collect {|comment| Comment.new(comment)} }
+      }
 
     }
   end

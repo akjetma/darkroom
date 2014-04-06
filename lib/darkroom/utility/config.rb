@@ -29,9 +29,9 @@ module Darkroom
     klass.instance_eval do
       @resources.keys.each do |name|
         define_singleton_method(name) do |*args|
-          path = @resources[name].call(args).join('/')
+          path = @resources[name][:pattern].call(args)
           response = Root.get(path)
-          self.new(response['data'])
+          @resources[name][:create].call(response['data'])
         end
       end
     end
@@ -44,7 +44,7 @@ module Darkroom
         if @properties.include?(prop)
           instance_variable_get(prop)
         else
-          super
+          super(name, *args)
         end
       end
     end

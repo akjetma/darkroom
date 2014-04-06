@@ -2,8 +2,10 @@ module Darkroom
   class Image
     @resources = {
 
-      :info       => lambda { |args| ['image', args[0]] },
-      :from_album => lambda { |args| ['album', args[0], 'image', args[1]] }
+      :info => {
+        :pattern => lambda { |args| "image/#{args[0]}" },
+        :create  => lambda { |data| Image.new(data) }
+      },
 
     }
   end
