@@ -9,7 +9,7 @@ module Darkroom
 
       :image => {
         :pattern => lambda { |args| "album/#{args[0]}/image/#{args[1]}" },
-        :create  =>  lambda { |data| Image.new(data) }
+        :create  => lambda { |data| Image.new(data) }
       },
 
       :images => {

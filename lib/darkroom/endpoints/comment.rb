@@ -1,6 +1,5 @@
 module Darkroom
   class Comment
-
     @resources = {
 
       :info => {
