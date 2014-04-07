@@ -1,11 +1,10 @@
 module Darkroom
   class Root
     
-    @format = 'json'
     @url = 'https://api.imgur.com/3'
 
     class << self
-      attr_accessor :resource, :url, :format
+      attr_accessor :resource, :url
     end
 
     def self.get (path, params={})

@@ -1,5 +1,7 @@
 module Darkroom
-  class Album
+  class Album < Darkroom::Model
+    extend Darkroom::Endpoint
+
     @resources = {
 
       :info => {
@@ -18,5 +20,7 @@ module Darkroom
       }
 
     }
+
+    def_endpoints
   end
 end
