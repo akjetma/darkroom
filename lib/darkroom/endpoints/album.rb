@@ -6,17 +6,17 @@ module Darkroom
 
       :info => {
         :pattern => lambda { |args| "album/#{args[0]}" },
-        :create  => lambda { |data| Darkroom::Model::Album.new(data) }
+        :response_model => Darkroom::Model::Album
       },
 
       :image => {
         :pattern => lambda { |args| "album/#{args[0]}/image/#{args[1]}" },
-        :create  => lambda { |data| Darkroom::Model::Image.new(data) }
+        :response_model => Darkroom::Model::Image
       },
 
       :images => {
         :pattern => lambda { |args| "album/#{args[0]}/images" },
-        :create  => lambda { |data| data.collect {|image| Darkroom::Model::Image.new(image)} }
+        :response_model => Darkroom::Model::Image
       }
 
     }

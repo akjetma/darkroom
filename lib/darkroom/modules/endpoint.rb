@@ -6,7 +6,7 @@ module Darkroom
         define_singleton_method(name) do |*args|
           path = @resources[name][:pattern].call(args)
           response = Root.get(path)
-          @resources[name][:create].call(response['data'])
+          @resources[name][:response_model].make(response['data'])
         end
       end
     end

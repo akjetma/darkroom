@@ -6,7 +6,7 @@ module Darkroom
 
       :info => {
         :pattern => lambda { |args| "image/#{args[0]}" },
-        :create  => lambda { |data| Darkroom::Model::Image.new(data) }
+        :response_model => Darkroom::Model::Image
       },
 
     }

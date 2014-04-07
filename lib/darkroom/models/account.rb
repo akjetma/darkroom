@@ -1,6 +1,6 @@
 module Darkroom
   class Model
-    class GalleryImage < Darkroom::Model
+    class Account < Darkroom::Model
       @schema = {}
     end
   end

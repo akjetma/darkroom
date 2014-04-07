@@ -6,15 +6,12 @@ module Darkroom
 
       :info => {
         :pattern => lambda { |args| "comment/#{args[0]}" },
-        :create  => lambda { |data| Darkroom::Model::Comment.new(data) }
+        :response_model => Darkroom::Model::Comment
       },
 
       :replies => {
         :pattern => lambda { |args| "comment/#{args[0]}/replies" },
-        :create  => lambda { |data| 
-          data['children'] = data['children'].collect {|comment| Darkroom::Model::Comment.new(comment)}
-          Darkroom::Model::Comment.new(data)
-        }
+        :response_model => Darkroom::Model::Comment
       }
 
     }
