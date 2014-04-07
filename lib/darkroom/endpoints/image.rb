@@ -1,7 +1,5 @@
 module Darkroom
-  class Image < Darkroom::Model
-    extend Darkroom::Endpoint
-
+  class Image < Darkroom::Endpoint
     @resources = {
 
       :info => {

@@ -10,7 +10,6 @@ Gem::Specification.new do |s|
   s.files       = [
                     'lib/darkroom.rb',
                     'lib/darkroom/utility/config.rb',
-                    'lib/darkroom/modules/model.rb',
                     'lib/darkroom/modules/endpoint.rb',
                     'lib/darkroom/endpoints/root.rb',
                     'lib/darkroom/endpoints/image.rb',

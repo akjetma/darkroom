@@ -1,7 +1,5 @@
 module Darkroom
-  class Comment < Darkroom::Model
-    extend Darkroom::Endpoint
-
+  class Comment < Darkroom::Endpoint
     @resources = {
 
       :info => {
@@ -11,7 +9,10 @@ module Darkroom
 
       :replies => {
         :pattern => lambda { |args| "comment/#{args[0]}/replies" },
-        :create  => lambda { |data| data['children'].collect {|comment| Comment.new(comment)} }
+        :create  => lambda { |data| 
+          data['children'] = data['children'].collect {|comment| Comment.new(comment)}
+          Comment.new(data)
+        }
       }
 
     }
