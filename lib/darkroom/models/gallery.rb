@@ -1,7 +1,7 @@
 module Darkroom
   class Model
     module Gallery
-      def make(obj)
+      def self.make(obj)
         if obj.is_a? Array
           obj.collect { |o| self.make(o) }
         else

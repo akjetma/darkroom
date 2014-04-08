@@ -7,15 +7,15 @@ module Darkroom
       :info => {
         :pattern => lambda { |args| ["gallery", args].flatten.join('/') },
         :response_model => Darkroom::Model::Gallery
-      }
+      },
 
       :memes => {
-        :pattern => labmda { |args| ["gallery/g/memes", args].flatten.join('/') },
+        :pattern => lambda { |args| ["gallery/g/memes", args].flatten.join('/') },
         :response_model => Darkroom::Model::Gallery
       },
 
       :subreddit => {
-        :pattern => lambda { |args| "gallery/r/subreddit", args].flatten.join('/') },
+        :pattern => lambda { |args| ["gallery/r/subreddit", args].flatten.join('/') },
         :response_model => Darkroom::Model::Gallery
       },
 
@@ -32,22 +32,22 @@ module Darkroom
       :votes => {
         :pattern => lambda { |args| "gallery/#{args[0]}/votes" },
         :response_model => Darkroom::Model::Vote
-      }
+      },
 
       :comments => {
         :pattern => lambda { |args| "gallery/#{args[0]}/comments" },
         :response_model => Darkroom::Model::Comment
-      }
+      },
 
       :comment_ids => {
         :pattern => lambda { |args| "gallery/#{args[0]}/comments/ids" },
         :response_model => Darkroom::Model::Basic 
-      }
+      },
 
       :comment_count => {
         :pattern => lambda { |args| "gallery/#{args[0]}/comments/count" },
         :response_model => Darkroom::Model::Basic 
-      }
+      },
 
       :comment => {
         :pattern => lambda { |args| "gallery/#{args[0]}/comment/#{args[1]}" },
