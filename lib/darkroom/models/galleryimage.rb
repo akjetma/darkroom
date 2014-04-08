@@ -1,7 +1,9 @@
 module Darkroom
   class Model
-    class GalleryImage < Darkroom::Model
-      @schema = {}
+    module Gallery
+      class Image < Darkroom::Model
+        @schema = {}
+      end
     end
   end
 end

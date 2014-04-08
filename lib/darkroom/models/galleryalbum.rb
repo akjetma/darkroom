@@ -1,11 +1,13 @@
 module Darkroom
   class Model
-    class GalleryAlbum < Darkroom::Model
-      @schema = {
+    module Gallery
+      class Album < Darkroom::Model
+        @schema = {
 
-        'images' => Darkroom::Model::Image
+          'images' => Darkroom::Model::Image
 
-      }
+        }
+      end
     end
   end
 end

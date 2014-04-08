@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
                     'lib/darkroom/models/account.rb',
                     'lib/darkroom/models/album.rb',
                     'lib/darkroom/models/comment.rb',
+                    'lib/darkroom/models/gallery.rb',
                     'lib/darkroom/models/galleryalbum.rb',
                     'lib/darkroom/models/galleryimage.rb',
                     'lib/darkroom/models/galleryprofile.rb',
@@ -25,7 +26,9 @@ Gem::Specification.new do |s|
                     'lib/darkroom/endpoints/image.rb',
                     'lib/darkroom/endpoints/album.rb',
                     'lib/darkroom/endpoints/comment.rb',
-                    'lib/darkroom/endpoints/gallery.rb'
+                    'lib/darkroom/endpoints/gallery.rb',
+                    'lib/darkroom/endpoints/galleryalbum.rb',
+                    'lib/darkroom/endpoints/galleryimage.rb'
                   ]
   s.homepage    = 'http://google.com'
   s.license     = 'MIT'
