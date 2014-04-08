@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
                     'lib/darkroom/modules/model.rb',
                     'lib/darkroom/models/account.rb',
                     'lib/darkroom/models/album.rb',
+                    'lib/darkroom/models/basic.rb',
                     'lib/darkroom/models/comment.rb',
                     'lib/darkroom/models/gallery.rb',
                     'lib/darkroom/models/galleryalbum.rb',

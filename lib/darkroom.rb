@@ -9,6 +9,7 @@ require_relative 'darkroom/modules/model'
 
 require_relative 'darkroom/models/account'
 require_relative 'darkroom/models/album'
+require_relative 'darkroom/models/basic'
 require_relative 'darkroom/models/comment'
 require_relative 'darkroom/models/gallery'
 require_relative 'darkroom/models/galleryalbum'
