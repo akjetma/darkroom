@@ -6,32 +6,32 @@ module Darkroom
       @resources = {
 
         :info => {
-          :pattern => lambda { |args| "gallery/album/#{args[0]}" },
+          :pattern => lambda { |album_id| "gallery/album/#{album_id}" },
           :response_model => Darkroom::Model::Gallery::Album
         },
 
         :votes => {
-          :pattern => lambda { |args| "gallery/album/#{args[0]}/votes" },
+          :pattern => lambda { |album_id| "gallery/album/#{album_id}/votes" },
           :response_model => Darkroom::Model::Vote
         },
 
         :comments => {
-          :pattern => lambda { |args| "gallery/album/#{args[0]}/comments" },
+          :pattern => lambda { |album_id| "gallery/album/#{album_id}/comments" },
           :response_model => Darkroom::Model::Comment
         },
 
         :comment_ids => {
-          :pattern => lambda { |args| "gallery/album/#{args[0]}/comments/ids" },
+          :pattern => lambda { |album_id| "gallery/album/#{album_id}/comments/ids" },
           :response_model => Darkroom::Model::Basic 
         },
 
         :comment_count => {
-          :pattern => lambda { |args| "gallery/album/#{args[0]}/comments/count" },
+          :pattern => lambda { |album_id| "gallery/album/#{album_id}/comments/count" },
           :response_model => Darkroom::Model::Basic 
         },
 
         :comment => {
-          :pattern => lambda { |args| "gallery/album/#{args[0]}/comment/#{args[1]}" },
+          :pattern => lambda { |album_id, comment_id| "gallery/album/#{album_id}/comment/#{comment_id}" },
           :response_model => Darkroom::Model::Comment
         }
 

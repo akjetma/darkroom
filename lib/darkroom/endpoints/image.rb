@@ -5,7 +5,7 @@ module Darkroom
     @resources = {
 
       :info => {
-        :pattern => lambda { |args| "image/#{args[0]}" },
+        :pattern => lambda { |image_id| "image/#{image_id}" },
         :response_model => Darkroom::Model::Image
       },
 

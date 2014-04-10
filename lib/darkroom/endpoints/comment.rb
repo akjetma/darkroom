@@ -5,12 +5,12 @@ module Darkroom
     @resources = {
 
       :info => {
-        :pattern => lambda { |args| "comment/#{args[0]}" },
+        :pattern => lambda { |comment_id| "comment/#{comment_id}" },
         :response_model => Darkroom::Model::Comment
       },
 
       :replies => {
-        :pattern => lambda { |args| "comment/#{args[0]}/replies" },
+        :pattern => lambda { |comment_id| "comment/#{comment_id}/replies" },
         :response_model => Darkroom::Model::Comment
       }
 

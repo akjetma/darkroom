@@ -5,17 +5,17 @@ module Darkroom
     @resources = {
 
       :info => {
-        :pattern => lambda { |args| "album/#{args[0]}" },
+        :pattern => lambda { |album_id| "album/#{id}" },
         :response_model => Darkroom::Model::Album
       },
 
       :image => {
-        :pattern => lambda { |args| "album/#{args[0]}/image/#{args[1]}" },
+        :pattern => lambda { |album_id, image_id| "album/#{album_id}/image/#{image_id}" },
         :response_model => Darkroom::Model::Image
       },
 
       :images => {
-        :pattern => lambda { |args| "album/#{args[0]}/images" },
+        :pattern => lambda { |album_id| "album/#{album_id}/images" },
         :response_model => Darkroom::Model::Image
       }
 
