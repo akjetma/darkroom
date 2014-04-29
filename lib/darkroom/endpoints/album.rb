@@ -1,26 +1,11 @@
-module Darkroom
-  module Album
-    extend Darkroom::Endpoint
-
-    @resources = {
-
-      :info => {
-        :pattern => lambda { |album_id| "album/#{id}" },
-        :response_model => Darkroom::Model::Album
-      },
-
-      :image => {
-        :pattern => lambda { |album_id, image_id| "album/#{album_id}/image/#{image_id}" },
-        :response_model => Darkroom::Model::Image
-      },
-
-      :images => {
-        :pattern => lambda { |album_id| "album/#{album_id}/images" },
-        :response_model => Darkroom::Model::Image
-      }
-
-    }
-    
-    build_endpoints
+module Imgur
+  module Endpoint
+    class Album
+      include Darkroom::Endpoint
+      
+      resource :info,   'album/:album_id',                 Darkroom::Model::Album
+      resource :image,  'album/:album_id/image/:image_id', Darkroom::Model::Image
+      resource :images, 'album/:album_id/images',          Darkroom::Model::Image, :many => true
+    end
   end
 end

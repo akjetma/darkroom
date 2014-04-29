@@ -1,43 +1,14 @@
-module Darkroom
-  module Gallery
-    module Album
-      extend Darkroom::Endpoint
-
-      @resources = {
-
-        :info => {
-          :pattern => lambda { |album_id| "gallery/album/#{album_id}" },
-          :response_model => Darkroom::Model::Gallery::Album
-        },
-
-        :votes => {
-          :pattern => lambda { |album_id| "gallery/album/#{album_id}/votes" },
-          :response_model => Darkroom::Model::Vote
-        },
-
-        :comments => {
-          :pattern => lambda { |album_id| "gallery/album/#{album_id}/comments" },
-          :response_model => Darkroom::Model::Comment
-        },
-
-        :comment_ids => {
-          :pattern => lambda { |album_id| "gallery/album/#{album_id}/comments/ids" },
-          :response_model => Darkroom::Model::Basic 
-        },
-
-        :comment_count => {
-          :pattern => lambda { |album_id| "gallery/album/#{album_id}/comments/count" },
-          :response_model => Darkroom::Model::Basic 
-        },
-
-        :comment => {
-          :pattern => lambda { |album_id, comment_id| "gallery/album/#{album_id}/comment/#{comment_id}" },
-          :response_model => Darkroom::Model::Comment
-        }
-
-      }
-
-      build_endpoints
+module Imgur
+  module Endpoint
+    class GalleryAlbum
+      include Darkroom::Endpoint
+      
+      resource :info,          'gallery/album/:album_id',                     Darkroom::Model::Gallery::Album
+      resource :votes,         'gallery/album/:album_id/votes',               Darkroom::Model::Vote,          :many => true
+      resource :comments,      'gallery/album/:album_id/comments',            Darkroom::Model::Comment,       :many => true
+      resource :comment_ids,   'gallery/album/:album_id/comment_ids',         String,                         :many => true
+      resource :comment_count, 'gallery/album/:album_id/comments/count',      Integer
+      resource :comment,       'gallery/album/:album_id/comment/:comment_id', Darkroom::Model::Comment
     end
   end
 end

@@ -1,16 +1,9 @@
-module Darkroom
-  module Image
-    extend Darkroom::Endpoint
-
-    @resources = {
-
-      :info => {
-        :pattern => lambda { |image_id| "image/#{image_id}" },
-        :response_model => Darkroom::Model::Image
-      },
-
-    }
-
-    build_endpoints
+module Imgur
+  module Endpoint
+    class Image
+      include Darkroom::Endpoint
+      
+      resource :info, 'image/:image_id', Darkroom::Model::Image
+    end
   end
 end

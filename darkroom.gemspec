@@ -1,11 +1,11 @@
 Gem::Specification.new do |s|
-  s.name        = 'darkroom'
-  s.version     = '0.0.3'
-  s.add_runtime_dependency "rest-client"
-  s.date        = '2014-04-04'
-  s.summary     = "Exposes the Imgur API!"
-  s.description = "See summary"
-  s.authors     = ["Adam Jetmalani", "Devin Gaffney"]
+  s.name        = 'darkroom-imgur'
+  s.version     = '0.0.0'
+  s.add_runtime_dependency "darkroom"
+  s.date        = '2014-04-28'
+  s.summary     = "Example gem using the Darkoom prototype to expose the Imgur API"
+  s.description = "This is currently non-functioning example code to spec how the Darkroom gem will work"
+  s.authors     = ["Adam Jetmalani"]
   s.email       = 'adam.k.jet@gmail.com'
   s.files       = [
                     'lib/darkroom.rb',
@@ -31,6 +31,6 @@ Gem::Specification.new do |s|
                     'lib/darkroom/endpoints/galleryalbum.rb',
                     'lib/darkroom/endpoints/galleryimage.rb'
                   ]
-  s.homepage    = 'http://google.com'
+  s.homepage    = 'http://github.com/akjetma'
   s.license     = 'MIT'
 end
