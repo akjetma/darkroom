@@ -1,7 +1,7 @@
 module Imgur
   module Endpoint
     class Album
-      include Darkroom::Endpoint
+      extend Darkroom::Endpoint
       
       resource :info,   'album/:album_id',                 Darkroom::Model::Album
       resource :image,  'album/:album_id/image/:image_id', Darkroom::Model::Image

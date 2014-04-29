@@ -8,28 +8,22 @@ Gem::Specification.new do |s|
   s.authors     = ["Adam Jetmalani"]
   s.email       = 'adam.k.jet@gmail.com'
   s.files       = [
-                    'lib/darkroom.rb',
-                    'lib/darkroom/utility/config.rb',
-                    'lib/darkroom/utility/models.rb',
-                    'lib/darkroom/modules/endpoint.rb',
-                    'lib/darkroom/modules/model.rb',
-                    'lib/darkroom/models/account.rb',
-                    'lib/darkroom/models/album.rb',
-                    'lib/darkroom/models/basic.rb',
-                    'lib/darkroom/models/comment.rb',
-                    'lib/darkroom/models/gallery.rb',
-                    'lib/darkroom/models/galleryalbum.rb',
-                    'lib/darkroom/models/galleryimage.rb',
-                    'lib/darkroom/models/galleryprofile.rb',
-                    'lib/darkroom/models/image.rb',
-                    'lib/darkroom/models/vote.rb',
-                    'lib/darkroom/endpoints/root.rb',
-                    'lib/darkroom/endpoints/image.rb',
-                    'lib/darkroom/endpoints/album.rb',
-                    'lib/darkroom/endpoints/comment.rb',
-                    'lib/darkroom/endpoints/gallery.rb',
-                    'lib/darkroom/endpoints/galleryalbum.rb',
-                    'lib/darkroom/endpoints/galleryimage.rb'
+                    'lib/darkroom_imgur.rb',
+                    'lib/darkroom_imgur/models/account.rb',
+                    'lib/darkroom_imgur/models/album.rb',
+                    'lib/darkroom_imgur/models/comment.rb',
+                    'lib/darkroom_imgur/models/gallery.rb',
+                    'lib/darkroom_imgur/models/galleryalbum.rb',
+                    'lib/darkroom_imgur/models/galleryimage.rb',
+                    'lib/darkroom_imgur/models/galleryprofile.rb',
+                    'lib/darkroom_imgur/models/image.rb',
+                    'lib/darkroom_imgur/models/vote.rb',
+                    'lib/darkroom_imgur/endpoints/image.rb',
+                    'lib/darkroom_imgur/endpoints/album.rb',
+                    'lib/darkroom_imgur/endpoints/comment.rb',
+                    'lib/darkroom_imgur/endpoints/gallery.rb',
+                    'lib/darkroom_imgur/endpoints/galleryalbum.rb',
+                    'lib/darkroom_imgur/endpoints/galleryimage.rb'
                   ]
   s.homepage    = 'http://github.com/akjetma'
   s.license     = 'MIT'

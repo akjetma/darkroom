@@ -1,7 +1,7 @@
 module Imgur
   module Endpoint
     class GalleryAlbum
-      include Darkroom::Endpoint
+      extend Darkroom::Endpoint
       
       resource :info,          'gallery/album/:album_id',                     Darkroom::Model::Gallery::Album
       resource :votes,         'gallery/album/:album_id/votes',               Darkroom::Model::Vote,          :many => true

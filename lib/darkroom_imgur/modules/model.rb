@@ -5,11 +5,7 @@ module Darkroom
     attr_reader :properties
     
     def self.make(obj)
-      if obj.is_a? Array
-        obj.collect { |o| self.make(o) }
-      else
-        self.new(obj)
-      end
+      self.new(obj)
     end
 
     def initialize(obj)

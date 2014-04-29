@@ -1,11 +1,11 @@
 module Imgur
   module Endpoint
     class Gallery
-      include Darkroom::Endpoint
+      extend Darkroom::Endpoint
       
-      resource :info,          'gallery/*args',                           Darkroom::Model::Gallery
-      resource :memes,         'gallery/g/memes/*args',                   Darkroom::Model::Gallery
-      resource :subreddit,     'gallery/r/subreddit/*args',               Darkroom::Model::Gallery
+      resource :info,          'gallery/*args',                           Darkroom::Model::Gallery, :many => true
+      resource :memes,         'gallery/g/memes/*args',                   Darkroom::Model::Gallery, :many => true
+      resource :subreddit,     'gallery/r/subreddit/*args',               Darkroom::Model::Gallery, :many => true
       resource :search,        'gallery/search/*args',                    Darkroom::Model::Gallery, :params => ['q']
       resource :random,        'gallery/random/:page',                    Darkroom::Model::Gallery
       resource :votes,         'gallery/:gallery_id/votes',               Darkroom::Model::Vote,    :many => true
