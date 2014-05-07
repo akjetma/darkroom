@@ -1,11 +1,10 @@
 module Darkroom
   class Model
-    class << self; attr_reader :schema; end
-
+    
     attr_reader :properties
     
-    def self.make(obj)
-      self.new(obj)
+    class << self
+      attr_reader :schema
     end
 
     def initialize(obj)
